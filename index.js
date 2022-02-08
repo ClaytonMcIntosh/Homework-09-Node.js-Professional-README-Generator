@@ -11,17 +11,17 @@ inquirer
     {
       type: "input",
       name: "description",
-      message: "Please enter a description of your project.",
+      message: "Please enter a description of your project:",
     },
     {
       type: "input",
       name: "installation",
-      message: "Please enter installation instructions.",
+      message: "Please enter installation instructions:",
     },
     {
       type: "input",
       name: "usage",
-      message: "Please enter usage infomation.",
+      message: "Please enter usage infomation:",
     },
     {
       type: "rawlist",
@@ -32,22 +32,22 @@ inquirer
     {
       type: "input",
       name: "contributing",
-      message: "Please enter contribution guidelines.",
+      message: "Please enter contribution guidelines:",
     },
     {
       type: "input",
       name: "tests",
-      message: "Please enter tests instructions.",
+      message: "Please enter tests instructions:",
     },
     {
       type: "input",
       name: "gitHubName",
-      message: "Please enter your GitHub account name.",
+      message: "Please enter your GitHub account name:",
     },
     {
       type: "input",
       name: "email",
-      message: "Please enter your email.",
+      message: "Please enter your email:",
     },
   ])
   .then(function (answer) {
@@ -93,7 +93,11 @@ ${answer.usage}
 
 ## License
 
-${answer.license}
+License type: ${answer.license}
+
+${badge}
+
+(click badge for official infomation)
 
 ## Contributing
 
@@ -105,9 +109,7 @@ ${answer.tests}
 
 ## Questions
 
-${answer.Questions}
-
-If you have any questions, you can reach me on my [GitHub account](https://${answer.gitHubName}.io) or at my [email](mailto:${answer.email}).
+If you have any questions, you can reach me on my [GitHub account](https://github.com/${answer.gitHubName}) or at my [email](mailto:${answer.email}).
 `;
     fs.writeFile("README.md", readme, function (err) {
       if (err) {
